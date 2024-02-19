@@ -10,7 +10,7 @@ describe('Visit the site, click on the Login link, and click on the Sign in butt
       cy.visit('https://dev.yuzee.click');
 
     cy.contains('Sign in').click();
-
+//comment added
     cy.get('.row > :nth-child(1) > .form-control').clear()
     cy.get('.row > :nth-child(1) > .form-control').type('fdc65165a75b29@crankymonkey.info')
 
