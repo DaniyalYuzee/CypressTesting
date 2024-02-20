@@ -1,39 +1,22 @@
-/// <reference types="cypress" />
+Cypress.on('uncaught:exception', (err, runnable) => {
+  return false;
+});
 
-context('Aliasing', () => {
-  beforeEach(() => {
-    cy.visit('https://example.cypress.io/commands/aliasing')
+describe('Visit the site, click on the Login link, and click on the Sign in button', () => {
+    it('should visit the site, click on the Login link, and click on the Sign in button', () => {
+
+      const randomName = generateRandomName();
+      
+      cy.visit('https://dev.yuzee.click');
+
+    cy.contains('Sign in').click();
+//comment add
+    cy.get('.row > :nth-child(1) > .form-control').clear()
+    cy.get('.row > :nth-child(1) > .form-control').type('fdc65165a75b29@crankymonkey.info')
+
+    cy.get('.pass-fild > .form-control').clear()
+    cy.get('.pass-fild > .form-control').type('Admin12345!')
+
+    cy.get('form.ng-dirty > .text-center > .btn').click()
+    })
   })
-
-  it('.as() - alias a DOM element for later use', () => {
-    // https://on.cypress.io/as
-
-    // Alias a DOM element for use later
-    // We don't have to traverse to the element
-    // later in our code, we reference it with @
-
-    cy.get('.as-table').find('tbody>tr')
-      .first().find('td').first()
-      .find('button').as('firstBtn')
-
-    // when we reference the alias, we place an
-    // @ in front of its name
-    cy.get('@firstBtn').click()
-
-    cy.get('@firstBtn')
-      .should('have.class', 'btn-success')
-      .and('contain', 'Changed')
-  })
-
-  it('.as() - alias a route for later use', () => {
-    // Alias the route to wait for its response
-    cy.intercept('GET', '**/comments/*').as('getComment')
-
-    // we have code that gets a comment when
-    // the button is clicked in scripts.js
-    cy.get('.network-btn').click()
-
-    // https://on.cypress.io/wait
-    cy.wait('@getComment').its('response.statusCode').should('eq', 200)
-  })
-})
