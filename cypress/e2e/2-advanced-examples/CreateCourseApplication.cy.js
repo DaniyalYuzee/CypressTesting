@@ -5,7 +5,7 @@ Cypress.on('uncaught:exception', (err, runnable) => {
   describe('Visit the site, click on the Login link, and click on the Sign in button', () => {
       it('should visit the site, click on the Login link, and click on the Sign in button', () => {
   
-        const randomName = generateRandomName();
+        
         
         cy.visit('https://dev.yuzee.click');
   
