@@ -1,15 +1,15 @@
 name: Scheduled Tests
 
-on: 
-  schedule:
-    - cron: '15 7 * * *' # Runs the workflow every day at 12:13 PM PKT (07:13 UTC)
+on: push
+  # schedule:
+  #   - cron: '15 7 * * *' # Runs the workflow every day at 12:13 PM PKT (07:13 UTC)
 
 jobs:
   automated-tests:
     runs-on: windows-latest
     steps:
 
-      - run: node --version
+      - run: lambdatest-cypress run
       - run: npm --version
       # - name: Checkout code
       #   uses: actions/checkout@v2
