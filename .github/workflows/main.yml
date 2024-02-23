@@ -11,7 +11,7 @@ jobs:
     steps:
       - name: Install LambdaTest CLI
         run: npm install -g lambdatest-cli
-
+            lambdatest-cypress init --cv=10
       
       - name: Checkout code
         uses: actions/checkout@v2
