@@ -16,7 +16,7 @@ Cypress.on('uncaught:exception', (err, runnable) => {
   
       cy.get('.pass-fild > .form-control').clear()
       cy.get('.pass-fild > .form-control').type('Admin12345!')
-  
+  //asd
       cy.get('form.ng-dirty > .text-center > .btn').click()
       })
     })
