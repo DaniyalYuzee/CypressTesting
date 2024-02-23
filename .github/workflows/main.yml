@@ -8,11 +8,15 @@ jobs:
   automated-tests:
     runs-on: windows-latest
     steps:
-
-      - run: node --version
-      - run: npm --version
-      # - name: Checkout code
-      #   uses: actions/checkout@v2
+        - name: Checkout
+          uses: actions/checkout@v2
+        - name: cypress run 
+          uses: cypress-io/github-action@v2
+          with:
+              build: npm run build
+              start: npm start
+     
+     
 
       # # Install LambdaTest CLI (if needed)
       # - name: Install LambdaTest CLI
