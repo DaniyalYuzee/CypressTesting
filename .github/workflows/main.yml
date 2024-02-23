@@ -9,9 +9,9 @@ jobs:
     runs-on: windows-latest
     steps:
 
-      - run: npm install -g lambdatest-cli
-      - run: lambdatest auth --username daniyalyuzee --accesskey YrwO9ihRVb94XnkLH1TYUkV79RmyfcygWllLAWd542hS0dDb4P
-      - run: lambdatest-cypress run
+
+      - run: lambdatest run cypress --username daniyalyuzee --accesskey YrwO9ihRVb94XnkLH1TYUkV79RmyfcygWllLAWd542hS0dDb4P
+      - run: lambdatest run cypress --headless --spec "cypress/e2e/2-advanced-examples/CreateCourseApplication.cy.js"
       - run: npm --version
       # - name: Checkout code
       #   uses: actions/checkout@v2
