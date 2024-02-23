@@ -9,16 +9,16 @@ jobs:
     runs-on: windows-latest
     steps:
     
-      - name: Checkout code
-        uses: actions/checkout@v2
+      # - name: Checkout code
+      #   uses: actions/checkout@v2
 
-      - name: Set up Node.js
-        uses: actions/setup-node@v2
-        with:
-          node-version: '14'
+      # - name: Set up Node.js
+      #   uses: actions/setup-node@v2
+      #   with:
+      #     node-version: '14'
 
       - run:
-          npm run cypress:run -- --spec "cypress/e2e/2-advanced-examples/CreateCourseApplication.cy.js"
+          lambdatest-cypress run --spec "cypress/e2e/2-advanced-examples/CreateCourseApplication.cy.js"
       # - name: Checkout code
       #   uses: actions/checkout@v2
 
