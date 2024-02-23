@@ -20,7 +20,7 @@ jobs:
 
         run: lambdatest auth --username daniyalyuzee --accesskey YrwO9ihRVb94XnkLH1TYUkV79RmyfcygWllLAWd542hS0dDb4P
 
-      # Trigger test execution on LambdaTest
+      # Trigger test execution on LambdaTes
       - name: Run tests on LambdaTest
         run: lambdatest run cypress --username daniyalyuzee --accesskey YrwO9ihRVb94XnkLH1TYUkV79RmyfcygWllLAWd542hS0dDb4P
         
