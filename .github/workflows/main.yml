@@ -8,8 +8,8 @@ jobs:
   automated-tests:
     runs-on: windows-latest
     steps:
-      - run: npm install cypress
-      - run: lambdatest auth --username daniyalyuzee --accesskey YrwO9ihRVb94XnkLH1TYUkV79RmyfcygWllLAWd542hS0dDb4P
+      # - run: npm install cypress
+      # - run: lambdatest auth --username daniyalyuzee --accesskey YrwO9ihRVb94XnkLH1TYUkV79RmyfcygWllLAWd542hS0dDb4P
       - run: lambdatest-cypress run
       - run: npm --version
       # - name: Checkout code
