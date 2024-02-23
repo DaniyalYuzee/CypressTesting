@@ -33,5 +33,6 @@ jobs:
 
       - name: Run Cypress tests on LambdaTest
         run: |
+          npm install -g lambdatest-cli
           lambdatest auth --username daniyalyuzee --accesskey YrwO9ihRVb94XnkLH1TYUkV79RmyfcygWllLAWd542hS0dDb4P
           npx cypress run --headless --browser chrome --spec "cypress\e2e\2-advanced-examples\CreateCourseApplication.cy.js"
