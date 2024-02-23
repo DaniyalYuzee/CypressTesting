@@ -1,6 +1,6 @@
 name: Scheduled Tests
 
-on:
+on: 
   schedule:
     - cron: '0 7 * * *' # Runs the workflow every day at 12:00 PM PKT (07:00 UTC)
 
