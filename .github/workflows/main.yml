@@ -21,6 +21,6 @@ jobs:
 
       # Trigger test execution on LambdaTest
       - name: Run tests on LambdaTest
-        run: lambdatest run --browsers "Chrome@latest" --url "cypress\e2e\2-advanced-examples\CreateCourseApplication.cy.js"
+        run: lambdatest-cypress run --browsers "Chrome@latest" --url "cypress\e2e\2-advanced-examples\CreateCourseApplication.cy.js"
 
       # Additional steps to handle test results, notifications, etc.
