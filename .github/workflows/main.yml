@@ -20,8 +20,11 @@ jobs:
       - name: Install Cypress
         run: npm install cypress
 
+     
+
       - name: Install LambdaTest CLI
-        run: npm i @lambdatest/node-tunnel
+        run: npm install -g lambdatest-cli
+              npm i @lambdatest/node-tunnel
 
       - name: Run Cypress tests on LambdaTest
         run: |
