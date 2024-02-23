@@ -18,8 +18,7 @@ jobs:
           node-version: '14'
 
       - run:
-          lambdatest auth --username daniyalyuzee --accesskey YrwO9ihRVb94XnkLH1TYUkV79RmyfcygWllLAWd542hS0dDb4P 
-          npm run cypress:run # Assuming you have a npm script for running Cypress tests
+          npm run cypress:run -- --spec "cypress/e2e/2-advanced-examples/CreateCourseApplication.cy.js"
       # - name: Checkout code
       #   uses: actions/checkout@v2
 
