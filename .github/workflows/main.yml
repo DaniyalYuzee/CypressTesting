@@ -17,10 +17,13 @@ jobs:
 
       # Authenticate with LambdaTest
       - name: Authenticate with LambdaTest
+
         run: lambdatest auth --username daniyalyuzee --accesskey YrwO9ihRVb94XnkLH1TYUkV79RmyfcygWllLAWd542hS0dDb4P
 
       # Trigger test execution on LambdaTest
       - name: Run tests on LambdaTest
-        run: lambdatest-cypress run --browsers "Chrome@latest" --url "cypress\e2e\2-advanced-examples\CreateCourseApplication.cy.js"
+        run: lambdatest run cypress --username daniyalyuzee --accesskey YrwO9ihRVb94XnkLH1TYUkV79RmyfcygWllLAWd542hS0dDb4P
+        
+         --headless --spec "cypress/e2e/2-advanced-examples/CreateCourseApplication.cy.js"
 
       # Additional steps to handle test results, notifications, etc.
