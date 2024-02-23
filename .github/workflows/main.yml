@@ -1,0 +1,20 @@
+name: Scheduled Tests
+
+on:
+  schedule:
+    - cron: '0 22 * * *' # Runs the workflow every day at 02:00 PM PST
+
+jobs:
+  automated-tests:
+    runs-on: windows-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Run tests
+        run: |
+          CypressTesting\cypress\e2e\2-advanced-examples\CreateCourseApplication.cy.js
+          
