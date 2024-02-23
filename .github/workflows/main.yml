@@ -8,10 +8,18 @@ jobs:
   automated-tests:
     runs-on: windows-latest
     steps:
-      # - run: npm install cypress
-      # - run: lambdatest auth --username daniyalyuzee --accesskey YrwO9ihRVb94XnkLH1TYUkV79RmyfcygWllLAWd542hS0dDb4P
-      - run: lambdatest-cypress run
-      - run: npm --version
+    
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v2
+        with:
+          node-version: '14'
+
+      - run:
+          lambdatest auth --username daniyalyuzee --accesskey YrwO9ihRVb94XnkLH1TYUkV79RmyfcygWllLAWd542hS0dDb4P 
+          npm run cypress:run # Assuming you have a npm script for running Cypress tests
       # - name: Checkout code
       #   uses: actions/checkout@v2
 
