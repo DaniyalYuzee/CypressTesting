@@ -1,29 +1,32 @@
 name: Scheduled Tests
 
-on: 
-  schedule:
-    - cron: '0 7 * * *' # Runs the workflow every day at 12:00 PM PKT (07:00 UTC)
+on: push
+  # schedule:
+    # - cron: '0 7 * * *' # Runs the workflow every day at 12:00 PM PKT (07:00 UTC)
 
 jobs:
   automated-tests:
     runs-on: windows-latest
     steps:
-      - name: Checkout code
-        uses: actions/checkout@v2
 
-      # Install LambdaTest CLI (if needed)
-      - name: Install LambdaTest CLI
-        run: npm install -g lambdatest-cli
+      - run: node --version
+      - run: npm --version
+      # - name: Checkout code
+      #   uses: actions/checkout@v2
 
-      # Authenticate with LambdaTest
-      - name: Authenticate with LambdaTest
+      # # Install LambdaTest CLI (if needed)
+      # - name: Install LambdaTest CLI
+      #   run: npm install -g lambdatest-cli
 
-        run: lambdatest auth --username daniyalyuzee --accesskey YrwO9ihRVb94XnkLH1TYUkV79RmyfcygWllLAWd542hS0dDb4P
+      # # Authenticate with LambdaTest
+      # - name: Authenticate with LambdaTest
 
-      # Trigger test execution on LambdaTes
-      - name: Run tests on LambdaTest
-        run: lambdatest run cypress --username daniyalyuzee --accesskey YrwO9ihRVb94XnkLH1TYUkV79RmyfcygWllLAWd542hS0dDb4P
+      #   run: lambdatest auth --username daniyalyuzee --accesskey YrwO9ihRVb94XnkLH1TYUkV79RmyfcygWllLAWd542hS0dDb4P
+
+      # # Trigger test execution on LambdaTes
+      # - name: Run tests on LambdaTest
+      #   run: lambdatest run cypress --username daniyalyuzee --accesskey YrwO9ihRVb94XnkLH1TYUkV79RmyfcygWllLAWd542hS0dDb4P
         
-         --headless --spec "cypress/e2e/2-advanced-examples/CreateCourseApplication.cy.js"
+      #    --headless --spec "cypress/e2e/2-advanced-examples/CreateCourseApplication.cy.js"
 
-      # Additional steps to handle test results, notifications, etc.
+      # # Additional steps to handle test results, notifications, etc.
