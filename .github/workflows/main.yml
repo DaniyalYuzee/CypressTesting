@@ -1,11 +1,32 @@
 name: Scheduled Tests
 
-on:
-   schedule: 
-     - cron: '15 7 * * *' # Runs the workflow every day at 12:13 PM PKT (07:13 UTC)
+on: 
+  schedule:
+    - cron: '0 7 * * *' # Runs the workflow every day at 12:00 PM PKT (07:00 UTC)
 
 jobs:
   automated-tests:
     runs-on: windows-latest
     steps:
-      - run: npm node --version
+
+      - run: node --version
+      - run: npm --version
+      # - name: Checkout code
+      #   uses: actions/checkout@v2
+
+      # # Install LambdaTest CLI (if needed)
+      # - name: Install LambdaTest CLI
+      #   run: npm install -g lambdatest-cli
+
+      # # Authenticate with LambdaTest
+      # - name: Authenticate with LambdaTest
+
+      #   run: lambdatest auth --username daniyalyuzee --accesskey YrwO9ihRVb94XnkLH1TYUkV79RmyfcygWllLAWd542hS0dDb4P
+
+      # # Trigger test execution on LambdaTes
+      # - name: Run tests on LambdaTest
+      #   run: lambdatest run cypress --username daniyalyuzee --accesskey YrwO9ihRVb94XnkLH1TYUkV79RmyfcygWllLAWd542hS0dDb4P
+        
+      #    --headless --spec "cypress/e2e/2-advanced-examples/CreateCourseApplication.cy.js"
+
+      # # Additional steps to handle test results, notifications, etc.
