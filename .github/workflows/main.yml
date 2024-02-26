@@ -38,5 +38,5 @@ jobs:
           npx cypress run --headless --spec "cypress\e2e\2-advanced-examples\CreateCourseApplication.cy.js"
 
       - name: Run Cypress tests on LambdaTest
-        run: |
+        run: 
             lambdatest cypress run -- --record --key YrwO9ihRVb94XnkLH1TYUkV79RmyfcygWllLAWd542hS0dDb4P --project-name "CypressTest" --build-name "Test"
