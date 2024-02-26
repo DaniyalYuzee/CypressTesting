@@ -1,9 +1,8 @@
 name: Scheduled Cypress Tests on LambdaTest
 
 on: 
-  push:
-    branches:
-      - main
+  workflow_dispatch:
+    
   schedule:
     - cron: '0 10 * * *' # Runs the workflow every day at 3:00 PM PKT
   # schedule:
@@ -12,7 +11,7 @@ on:
 jobs:
   run-tests:
     runs-on: windows-latest
-    if: github.event_name == 'schedule'
+    if: github.event_name == 'workflow_dispatch' || github.event_name == 'schedule'
     steps:
       - name: Run Tests
         run: echo "Running tests..."
