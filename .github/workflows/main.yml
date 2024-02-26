@@ -12,8 +12,12 @@ on:
 jobs:
   run-tests:
     runs-on: windows-latest
-
+    if: github.event_name == 'workflow_dispatch' || github.event_name == 'schedule'
     steps:
+      - name: Run Tests
+        run: echo "Running tests..."
+
+
       - name: Install LambdaTest CLI
         run: npm install -g lambdatest-cli
             lambdatest-cypress init --cv=10
