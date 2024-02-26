@@ -12,9 +12,9 @@ on:
 jobs:
   run-tests:
     runs-on: windows-latest
-    if: github.event_name == 'workflow_dispatch' || github.event_name == 'schedule'
     steps:
-      
+      - name: Run Tests
+        run: echo "Running tests..."
 
 
       - name: Install LambdaTest CLI
@@ -45,8 +45,6 @@ jobs:
           npx lambda-tunnel --user daniyalyuzee --key YrwO9ihRVb94XnkLH1TYUkV79RmyfcygWllLAWd542hS0dDb4P
           npx cypress run --headless --spec "cypress\e2e\2-advanced-examples\CreateCourseApplication.cy.js"
 
-      - name: Run Tests
-        run: echo "Running tests..."
       # - name: Run Cypress tests on LambdaTest
       #   run: 
       #       lambdatest cypress run --headless --record --key YrwO9ihRVb94XnkLH1TYUkV79RmyfcygWllLAWd542hS0dDb4P --project-name "CypressTest" --build-name "Test"
