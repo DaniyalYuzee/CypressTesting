@@ -12,6 +12,7 @@ on:
 jobs:
   run-tests:
     runs-on: windows-latest
+    if: github.event_name == 'schedule'
     steps:
       - name: Run Tests
         run: echo "Running tests..."
