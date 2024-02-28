@@ -1,18 +1,18 @@
 name: Scheduled Cypress Tests on LambdaTest
 
 on: 
-  # push:
-  #   branches:
-  #     - main
-  schedule:
-    - cron: '*/5 * * * *' # Runs the workflow every day at 3:00 PM PKT
+  push:
+    branches:
+      - main
+  # schedule:
+  #   - cron: '*/5 * * * *' # Runs the workflow every day at 3:00 PM PKT
  
 
 
 jobs:
   run-tests:
     runs-on: windows-latest
-    if: github.event_name == 'schedule'
+    # if: github.event_name == 'schedule'
     steps:
       - name: Run Tests
         run: echo "Running tests..."
