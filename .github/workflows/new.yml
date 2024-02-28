@@ -1,1 +1,22 @@
+name: Scheduled Cypress Tests on LambdaTest
 
+on:
+  schedule:
+    - cron: '0 11 * * '
+
+ 
+
+
+jobs:
+  build:
+    name: Trigger Code Checkout
+    runs-on: windows-latest
+
+    steps:
+        - name: Checkout code
+          uses: actions/checkout@v2
+
+        - name: Run Cypress tests on LambdaTest
+          run: npx cypress run --headless --spec "cypress\e2e\2-advanced-examples\CreateCourseApplication.cy.js"
+
+    
