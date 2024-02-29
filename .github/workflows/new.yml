@@ -1,11 +1,9 @@
 name: Scheduled Cypress Tests on LambdaTest
 
-on: 
-  push:
-    branches:
-      - main
-  # schedule:
-  #   - cron: '*/5 * * * *' # Runs the workflow every day at 3:00 PM PKT
+on:
+  schedule:
+    # * is a special character in YAML so you have to quote this string
+    - cron:  '*/5 * * * *'
  
 
 
