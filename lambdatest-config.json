@@ -13,13 +13,14 @@
       }
    ],
    "run_settings": {
+      
     
       "reporter_config_file": "base_reporter_config.json",
       "build_name": "Sample Test",
       "parallels": 1,
-      "specs": "./cypress/e2e/2-advanced-examples/actions.cy.js",
+      "specs": "./cypress/e2e/2-advanced-examples/CreateCourseApplication.cy.js",
       "ignore_files": "",
-      "network": false,
+      "network": true,
       "headless": false,
       "npm_dependencies": {
          "cypress": "10"
